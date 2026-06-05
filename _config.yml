@@ -31,12 +31,6 @@ twitter:
   card: summary_large_image
 
 exclude:
-  - node_modules
-  - package.json
-  - package-lock.json
-  - postcss.config.js
-  - tailwind.config.js
-  - css/styles.css
   - Gemfile
   - Gemfile.lock
   - README.md

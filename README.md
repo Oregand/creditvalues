@@ -10,12 +10,12 @@ This site is not affiliated with or endorsed by GitLab.
 
 ## Local development
 
+A plain Jekyll site with hand-written CSS (`css/handbook.css`) that recreates
+the clean, typographic look of the original GitLab handbook (Inter font,
+orange blockquote accents, GitLab-blue links). No build step required.
+
 ```sh
-npm install            # install Tailwind toolchain
-npm run build          # compile css/output.css
 bundle exec jekyll serve
 ```
 
-The site is a Jekyll site deployed via GitHub Pages. Styling reuses the
-Material-inspired Tailwind design system from
-[oregand.github.io](https://github.com/oregand/oregand.github.io).
+Deployed via GitHub Pages from the `main` branch.

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <title>{% if page.title and page.title != site.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   {% include head.html %}
 </head>
-<body class="bg-md-surface dark:bg-md-dark-surface text-md-on-surface dark:text-md-dark-on-surface transition-colors duration-300 font-sans antialiased">
-  {% include skip-link.html %}
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   {% include nav.html %}
 
   <main id="main-content" tabindex="-1">
