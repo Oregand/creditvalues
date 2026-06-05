@@ -1,9 +1,21 @@
 /* ==========================================================================
-   creditvalues.net — GitLab Handbook–inspired styling
-   Recreates the clean, typographic look of the original GitLab values page.
+   creditvalues.net — 1:1 recreation of the GitLab Handbook values page look
    ========================================================================== */
 
-/* ----- Reset ----- */
+:root {
+  --primary-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --mono-font: "Roboto Mono", "SFMono-Regular", Consolas, Menlo, monospace;
+  --text-color: #222222;
+  --muted-color: #797676;
+  --bg-color: #ffffff;
+  --link-color: #1068bf;
+  --heading-accent: #6e49cb;
+  --accent-orange: #fca121;
+  --border-color: #dee2e6;
+  --navbar-height: 64px;
+}
+
 *,
 *::before,
 *::after {
@@ -13,44 +25,20 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: calc(var(--navbar-height) + 1rem);
 }
 
 body {
-  margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--primary-font);
   font-size: 16px;
   line-height: 1.5;
-  color: #222222;
-  background-color: #ffffff;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  padding-top: var(--navbar-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-table,
-figure,
-blockquote {
-  margin: 0;
-}
-
-a {
-  color: #3176d9;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
 }
 
 img {
@@ -63,140 +51,177 @@ img {
   position: absolute;
   left: -9999px;
   top: 0;
-  z-index: 100;
+  z-index: 1100;
 }
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
   padding: 0.75rem 1rem;
-  background: #fc6d26;
+  background: var(--accent-orange);
   color: #fff;
   border-radius: 4px;
 }
 
-/* ----- Header ----- */
-.site-header {
-  border-bottom: 1px solid #ececef;
-  background: #fff;
-}
-.site-header__inner {
-  max-width: 1012px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.td-navbar {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--navbar-height);
+  padding: 8px 16px;
+  background-color: var(--heading-accent); /* GitLab purple */
+  z-index: 1030;
+  color: #ffffff;
 }
-.site-header__brand {
+
+.navbar-brand {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #222;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 0;
+  margin-right: 1rem;
 }
-.site-header__brand:hover {
+.navbar-brand:hover {
+  color: #fff;
   text-decoration: none;
 }
-.site-header__mark {
+.navbar-brand__mark {
   display: inline-block;
   width: 6px;
-  height: 26px;
+  height: 28px;
   border-radius: 3px;
-  background: #fca121; /* GitLab orange accent */
+  background: var(--accent-orange);
 }
-.site-header__nav {
+
+.td-navbar-nav-scroll {
+  display: flex;
+  margin-left: auto;
+}
+
+.navbar-nav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  font-size: 0.95rem;
-}
-.site-header__nav a {
-  color: #5c5c5c;
-}
-.site-header__nav a:hover {
-  color: #222;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* ----- Content container ----- */
+.nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.2s ease-in-out;
+  white-space: nowrap;
+}
+.nav-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
 .td-content {
-  max-width: 1012px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 4rem;
+  padding: 2rem;
 }
 
-/* ----- Typography scale ----- */
 .td-content h1 {
   font-size: 2.25rem; /* 36px */
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 1rem;
-  letter-spacing: -0.01em;
-}
-
-.td-content .page-lead {
-  font-size: 1.15rem;
-  color: #5c5c5c;
-  margin: 0 0 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .td-content h2 {
   font-size: 2rem; /* 32px */
   font-weight: 500;
   line-height: 1.2;
-  margin: 3rem 0 1rem;
-  padding-top: 0.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 .td-content h3 {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.25;
-  margin: 2.5rem 0 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .td-content h4 {
   font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.25;
-  margin: 2rem 0 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .td-content h5 {
   font-size: 1.15rem; /* 18.4px */
   font-weight: 500;
   line-height: 1.2;
-  margin: 2rem 0 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Highlighted sub-section headers */
+.td-content h5.accented {
+  color: var(--heading-accent);
+  font-weight: 700;
+  padding-bottom: 6px;
 }
 
 .td-content h6 {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
-  margin: 1.5rem 0 1rem;
-  color: #5c5c5c;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--muted-color);
 }
 
 .td-content p {
-  margin: 0 0 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
-/* ----- Links inside content ----- */
+.td-content .lead {
+  font-size: 1.15rem;
+  color: var(--muted-color);
+  margin-bottom: 2rem;
+}
+
 .td-content a {
-  color: #3176d9;
+  color: var(--link-color);
+  text-decoration: none;
+}
+.td-content a:hover {
+  text-decoration: underline;
 }
 
 /* ----- Blockquotes ----- */
 .td-content blockquote {
-  border-left: 6px solid #fca121;
-  padding: 0.25rem 0 0.25rem 1rem;
-  margin: 0 0 1rem;
-  color: #797676;
-}
-.td-content blockquote p {
-  margin-bottom: 0.5rem;
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+  border-left: 6px solid var(--accent-orange);
+  color: var(--muted-color);
 }
 .td-content blockquote p:last-child {
   margin-bottom: 0;
@@ -205,27 +230,23 @@ img {
 /* ----- Lists ----- */
 .td-content ul,
 .td-content ol {
-  padding-left: 40px;
-  margin: 0 0 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
 }
 .td-content ul {
-  list-style: disc;
+  list-style-type: disc;
 }
 .td-content ol {
-  list-style: decimal;
-  color: #797676;
+  list-style-type: decimal;
 }
 .td-content li {
   margin-bottom: 0.25rem;
 }
-.td-content li > p {
-  margin-bottom: 0.5rem;
-}
 
 /* ----- Code ----- */
 .td-content code {
-  font-family: "Roboto Mono", "SFMono-Regular", Consolas, "Liberation Mono",
-    Menlo, monospace;
+  font-family: var(--mono-font);
   font-size: 0.9em;
   background: #f4f4f6;
   padding: 0.15em 0.35em;
@@ -247,16 +268,15 @@ img {
 /* ----- Tables ----- */
 .td-content table {
   width: 100%;
+  margin-bottom: 1rem;
   border-collapse: collapse;
-  margin: 0 0 1.5rem;
-  font-size: 0.95rem;
   display: block;
   overflow-x: auto;
 }
 .td-content th,
 .td-content td {
-  padding: 12px;
-  border: 1px solid #dcdcde;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
   text-align: left;
   vertical-align: top;
 }
@@ -272,7 +292,7 @@ img {
   margin: 2.5rem 0;
 }
 
-/* ----- Responsive video wrapper (kept from content) ----- */
+/* ----- Responsive video wrapper ----- */
 .video-embed {
   position: relative;
   padding-bottom: 56.25%;
@@ -290,27 +310,40 @@ img {
   border: 0;
 }
 
-/* ----- Footer ----- */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 .site-footer {
   border-top: 1px solid #ececef;
   background: #fafafb;
-  color: #5c5c5c;
+  color: var(--muted-color);
   font-size: 0.9rem;
 }
 .site-footer__inner {
-  max-width: 1012px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 }
 .site-footer p {
   margin: 0 0 0.5rem;
 }
 .site-footer a {
-  color: #3176d9;
+  color: var(--link-color);
 }
 
-/* ----- Small screens ----- */
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
 @media (max-width: 640px) {
+  .navbar-brand {
+    font-size: 17px;
+  }
+  .nav-link {
+    padding: 8px 8px;
+  }
+  .td-content {
+    padding: 1.5rem 1.25rem;
+  }
   .td-content h1 {
     font-size: 1.9rem;
   }
