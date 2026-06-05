@@ -1,0 +1,12 @@
+{
+  "name": "David O'Regan",
+  "short_name": "D. O'Regan",
+  "description": "Senior Engineering Manager, Copilot @ GitHub. Personal site and blog.",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#0B57D0",
+  "background_color": "#FEF7FF",
+  "display": "browser",
+  "start_url": "/"
+}

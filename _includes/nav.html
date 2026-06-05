@@ -1,0 +1,30 @@
+<nav id="site-nav" class="md-app-bar" aria-label="Primary">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center gap-2">
+      <a href="{{ '/' | relative_url }}" class="text-lg font-medium text-md-on-surface dark:text-md-dark-on-surface tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-md-primary rounded-md-xs px-1">
+        {{ site.title }}
+      </a>
+
+      <div class="hidden lg:flex items-center space-x-1">
+        <a href="https://oregand.github.io" class="md-nav-link px-3">By David O'Regan</a>
+        <a href="https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/bc2282a09667ea2358091065f0dd4431d16d4040/content/handbook/values/_index.md" target="_blank" rel="noopener noreferrer" class="md-nav-link px-3">Original source</a>
+      </div>
+
+      <div class="flex items-center gap-1">
+        <button id="dark-mode-toggle" type="button" class="md-icon-btn" aria-label="Switch to dark mode" aria-pressed="false">
+          <i class="fas fa-moon dark:hidden text-lg" aria-hidden="true"></i>
+          <i class="fas fa-sun hidden dark:block text-lg" aria-hidden="true"></i>
+        </button>
+
+        <button id="mobile-menu-btn" type="button" class="md-icon-btn lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden hidden pt-3 pb-2" role="region" aria-label="Mobile navigation">
+      <a href="https://oregand.github.io" class="block min-h-12 flex items-center px-3 md-nav-link">By David O'Regan</a>
+      <a href="https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/bc2282a09667ea2358091065f0dd4431d16d4040/content/handbook/values/_index.md" target="_blank" rel="noopener noreferrer" class="block min-h-12 flex items-center px-3 md-nav-link">Original source</a>
+    </div>
+  </div>
+</nav>

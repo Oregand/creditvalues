@@ -1,0 +1,42 @@
+title: GitLab CREDIT Values
+description: >-
+  An archived, styled reproduction of GitLab's CREDIT values — Collaboration,
+  Results, Efficiency, Diversity Inclusion & Belonging, Iteration, and Transparency.
+baseurl: ""
+url: "https://creditvalues.net"
+author: "David O'Regan"
+author_image: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+logo: "https://avatars.githubusercontent.com/u/4388753?s=400&u=56053676f0fe2eb4d7f6986a022f2becc8279a0e&v=4"
+github_username: oregand
+linkedin_username: oregand7
+
+theme_color_light: "#0B57D0"
+theme_color_dark: "#A6C8FF"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+social:
+  name: "David O'Regan"
+  links:
+    - https://github.com/oregand
+    - https://gitlab.com/oregand
+
+twitter:
+  card: summary_large_image
+
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - postcss.config.js
+  - tailwind.config.js
+  - css/styles.css
+  - Gemfile
+  - Gemfile.lock
+  - README.md

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="container mx-auto px-4 py-12 max-w-3xl">
+  <header class="mb-10">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 text-md-on-surface dark:text-md-dark-on-surface tracking-tight leading-[1.15]">
+      {{ page.title }}
+    </h1>
+    {% if page.description %}
+      <p class="text-lg md:text-xl text-md-on-surface-variant dark:text-md-dark-on-surface-variant leading-relaxed">
+        {{ page.description }}
+      </p>
+    {% endif %}
+  </header>
+
+  <div class="prose prose-base sm:prose-lg max-w-none dark:prose-invert
+              prose-headings:font-medium prose-headings:tracking-tight
+              prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-12
+              prose-h3:text-xl sm:prose-h3:text-2xl
+              prose-img:rounded-md-md
+              prose-pre:rounded-md-md prose-pre:overflow-x-auto
+              prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+              prose-a:text-md-primary dark:prose-a:text-md-dark-primary
+              prose-table:block prose-table:overflow-x-auto">
+    {{ content }}
+  </div>
+</article>

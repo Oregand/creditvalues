@@ -1,0 +1,11 @@
+<script>
+  // Inline theme bootstrap to prevent flash of incorrect theme.
+  (function () {
+    try {
+      var stored = localStorage.getItem('darkMode');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = stored === 'true' || (stored === null && prefersDark);
+      if (isDark) document.documentElement.classList.add('dark');
+    } catch (e) { /* localStorage may be unavailable */ }
+  })();
+</script>
